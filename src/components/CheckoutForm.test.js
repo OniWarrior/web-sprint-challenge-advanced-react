@@ -8,7 +8,14 @@ import userEvent from "@testing-library/user-event";
 // Write up the two tests here and make sure they are testing what the title shows
 
 test("form header renders", () => {
-    render(<CheckoutForm/>);
+  const {getByText} = render(<CheckoutForm/>);
+  const header = getByText(/Checkout Form/i);
+
+  expect(header).toBeInTheDocument();
+  expect(header).toBeTruthy();
+  expect(header).not.toBeFalsy();
+  expect(header).toBeVisible();
+  expect(header).toHaveTextContent('Checkout Form');
 });
 
 test("form shows success message on submit with form details", () => {
