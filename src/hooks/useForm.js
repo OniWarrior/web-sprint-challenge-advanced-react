@@ -10,10 +10,7 @@ export const useForm = (initialValues)=>{
         });
     };
 
-    const clearForm = e =>{
-        e.preventDefault();
-        setValues(initialValues);
-    };
+    
 
-    return [values, handleChanges, clearForm];
+    return [values, handleChanges];
 }
